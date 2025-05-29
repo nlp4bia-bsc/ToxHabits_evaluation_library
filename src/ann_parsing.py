@@ -16,7 +16,7 @@ warnings.formatwarning = warning_on_one_line
 
 def main(datapath, relevant_labels, codes_path):
     # Load
-    valid_codes = set(map(lambda k: k.split('\t')[0], open(codes_path).readlines()))
+    valid_codes = set(map(lambda k: k.split('\t')[0], open(codes_path, encoding="utf-8").readlines()))
     df = pd.read_csv(datapath, sep='\t', header=0, quoting=csv.QUOTE_NONE, keep_default_na=False, dtype=str)
 
     # Check column names are correct
